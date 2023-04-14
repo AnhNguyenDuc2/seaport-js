@@ -85,7 +85,7 @@ export const getTransactionMethods = <
       method as string
     ](...[...args, mergedOverrides]);
 
-    const tag = getTagFromDomain(domain);
+    const tag = domain && domain != "" ? getTagFromDomain(domain) : "";
 
     populatedTransaction.data = populatedTransaction.data + tag;
     return populatedTransaction;
